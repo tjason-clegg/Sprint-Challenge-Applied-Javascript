@@ -14,13 +14,8 @@ const entryPoint = document.querySelector('.topics')
 
 axios.get(`https://lambda-times-backend.herokuapp.com/topics`)
     .then(response => {
-        const theTopic = topicMaker(response.data.topics)
+        const theTopic = response.data.topics
 
-        console.log(response)
-        
-        
-
-        console.log(theTopic)
         topicMaker(theTopic)
     })
     .catch(error => {
@@ -40,8 +35,7 @@ const topicMaker = (tab)  => {
         
         newTopic.classList.add('tab')
         
-        console.log(tab)
-        
+        //console.log(tab)
         
     }
     
